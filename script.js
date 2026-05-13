@@ -71,6 +71,30 @@ console.log("that is" + extraspaceneeded + "more square meters than you have now
 console.log("The new garden needs a radius of" + newradius + "meters");
 
 // errors in judgement
+
+
+ try { 
+    // calculate available space in the original garden
+    const availablespace = Math.PI * math . pow(radius, 2);
+    console.log('original garden available space: ${availablespace.tofixed(2)} square meters');
+    // calculate space required for the inital 100 plants
+    const startingplants = 100;
+    const initialspacerequired = startingplants * minspaceperplants;
+    console.log('space required for ${startingplants} plants: ${initialspacerequired} squaremeters');
+    // condition check for the space overflow
+    if (initialspacerequired > availablespace) {
+        throw new Error(
+           'critical space overfloe! the requested ${initialspacerequired} squaremetersfor' + 
+           '${startingplants} plants exceed the available garden space of ${availablespace.tofixed(2)} squaremeters' 
+        );
+
+    }
+ console.log("sucess: plants fit inside the garden footprint for now");
+}
+catch (error) {
+    // log the appropriate error message to the console
+    console.log('{error in judgement}: $ {error message}');
+}
     
 
 
